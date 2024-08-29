@@ -1,27 +1,131 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
   display: flex;
   justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #e5e5e5;
 }
 
-.calculator {
-  margin-top: 200px;
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+/* Calculator Styles */
+#calculator {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-}
-
-.calculator > * {
-  border: 1px solid black;
-  padding: 10px;
-}
-
-.row {
-  grid-column: 1 / -1;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 15px;
+  width: 320px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 #display {
+  grid-column: span 4;
+  background-color: #1c1c1c;
+  color: #00ff88;
+  font-size: 2.5rem;
+  padding: 20px;
+  border-radius: 8px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#answer {
+  font-size: 1.5rem;
   text-align: right;
 }
 
-#clear {
-  text-align: center;
+#expression {
+  font-size: 1.2rem;
+  text-align: right;
+  opacity: 0.75;
+}
+
+button {
+  padding: 20px;
+  font-size: 1.4rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.1s ease-in-out;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+.light-gray {
+  background-color: #f1f1f1;
+  color: #333;
+}
+
+.dark-gray {
+  background-color: #404040;
+  color: #f1f1f1;
+}
+
+.teal {
+  background-color: #20c997;
+  color: white;
+}
+
+.teal:hover {
+  background-color: #17a589;
+}
+
+.dark-gray:hover {
+  background-color: #505050;
+}
+
+.light-gray:hover {
+  background-color: #e0e0e0;
+}
+
+/* For Special Buttons */
+.yellow {
+  background-color: #ffcc00;
+  color: white;
+}
+
+.yellow:hover {
+  background-color: #e6b800;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  #calculator {
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  button {
+    padding: 15px;
+    font-size: 1.2rem;
+  }
 }
