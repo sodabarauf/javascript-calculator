@@ -1,18 +1,24 @@
-
+import { useState } from 'react';
 import './App.css';
 
 function App() {
+  const [display, setDisplay] = useState('0');
+
+
   return (
     <div className="App">
-     <div id="calculator">
-      <div id="display" className='row'></div>
-      <div id="clear" className='row'>
-        AC
-      </div>
-      <div id="seven">7</div>
-      <div id="eight">8</div>
-      <div id="multipl">*</div>
-      <div id="four">4</div>
+      <div className="calculator">
+        <div id="display" className='row'>
+          {display}
+        </div>
+        <div id="clear" className='row'>
+          AC
+        </div>
+        <div id="seven">7</div>
+        <div id="eight">8</div>
+        <div id="nine">9</div>
+        <div id="multipl">*</div>
+        <div id="four">4</div>
       <div id="five">5</div>
       <div id="six">6</div>
       <div id="divide">/</div>
